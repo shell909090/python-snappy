@@ -1,8 +1,21 @@
+python-snappy (0.5-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload (with prior authorization from maintainer).
+  * Added Python3 support (Closes: #782956).
+  * Ran wrap-and-sort.
+  * Standards-Version is now 3.9.8 (no change).
+  * Switch to debhelper 9.
+  * Fix typo in package long desc.
+  * Added dh-python build-depends.
+  * Added export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 20 May 2016 13:43:28 +0000
+
 python-snappy (0.5-1) unstable; urgency=low
 
   * New upstream release
 
- --  Shell Xu <shell909090@gmail.com>  Sun, 02 Jun 2013 18:59:04 +0800
+ -- Shell Xu <shell909090@gmail.com>  Sun, 02 Jun 2013 18:59:04 +0800
 
 python-snappy (0.4-1) unstable; urgency=low
 

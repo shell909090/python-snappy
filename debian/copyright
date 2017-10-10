@@ -4,13 +4,13 @@ Source: https://github.com/andrix/python-snappy
 
 Files: *
 Copyright: 2010 Andres Moreira <andres@andresmoreira.com>
-License: BSD
+License: BSD-2-clause
 
 Files: debian/*
 Copyright: 2012 Shell Xu <shell909090@gmail.com>
-License: BSD
+License: BSD-2-clause
 
-License: BSD
+License: BSD-2-clause
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
  .
