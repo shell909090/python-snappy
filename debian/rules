@@ -12,6 +12,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+bindnow
 override_dh_auto_clean:
 	dh_auto_clean
 	rm -rf build
+	rm -rf python_snappy.egg-info
 
 override_dh_auto_install:
 	set -e ; for pyvers in $(PYTHONS); do \

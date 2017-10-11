@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: python-snappy
-Version: 0.5
+Version: 0.5.2
 Summary: Python library for the snappy compression library from Google
 Home-page: http://github.com/andrix/python-snappy
 Author: Andres Moreira
@@ -23,10 +23,8 @@ Classifier: Intended Audience :: Developers
 Classifier: Intended Audience :: System Administrators
 Classifier: Operating System :: MacOS :: MacOS X
 Classifier: Operating System :: POSIX
-Classifier: Programming Language :: Python :: 2.5
-Classifier: Programming Language :: Python :: 2.6
 Classifier: Programming Language :: Python :: 2.7
 Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.0
-Classifier: Programming Language :: Python :: 3.1
-Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+
