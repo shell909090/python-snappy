@@ -23,9 +23,13 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-from distutils.core import setup, Extension
+import sys
+try:
+    from setuptools import setup, Extension
+except ImportError:
+    from distutils.core import setup, Extension
 
-version = '0.5'
+version = '0.5.2'
 long_description = """
 Python bindings for the snappy compression library from Google.
 
@@ -33,9 +37,18 @@ More details about Snappy library: http://code.google.com/p/snappy
 """
 
 
-snappymodule = Extension('_snappy',
+snappymodule = Extension('snappy._snappy',
                          libraries=['snappy'],
-                         sources=['snappymodule.cc', 'crc32c.c'])
+                         sources=['snappy/snappymodule.cc', 'snappy/crc32c.c'])
+
+ext_modules = [snappymodule]
+packages = ['snappy']
+install_requires = []
+
+if 'PyPy' in sys.version:
+    from setuptools import setup
+    ext_modules = []
+    install_requires = ['cffi']
 
 setup(
     name='python-snappy',
@@ -58,14 +71,12 @@ setup(
                  'Operating System :: MacOS :: MacOS X',
                  # 'Operating System :: Microsoft :: Windows', -- Not tested yet
                  'Operating System :: POSIX',
-                 'Programming Language :: Python :: 2.5',
-                 'Programming Language :: Python :: 2.6',
                  'Programming Language :: Python :: 2.7',
                  'Programming Language :: Python :: 3',
-                 'Programming Language :: Python :: 3.0',
-                 'Programming Language :: Python :: 3.1',
-                 'Programming Language :: Python :: 3.2',
+                 'Programming Language :: Python :: 3.5',
+                 'Programming Language :: Python :: 3.6',
                  ],
-    py_modules=['snappy'],
-    ext_modules=[snappymodule]
+    ext_modules=ext_modules,
+    packages=packages,
+    install_requires=install_requires
 )
