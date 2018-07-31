@@ -8,7 +8,7 @@ DEBVERS         ?= $(shell dpkg-parsechangelog -SVersion)
 VERSION         ?= $(shell echo '$(DEBVERS)' | sed -e 's/^[[:digit:]]*://' -e 's/[-].*//')
 DEBFLAVOR       ?= $(shell dpkg-parsechangelog -SDistribution)
 DEBPKGNAME      ?= $(shell dpkg-parsechangelog -SSource)
-UPSTREAM_GIT    ?= https://github.com/openstack/$(DEBPKGNAME).git
+UPSTREAM_GIT    ?= https://github.com/andrix/python-snappy
 GIT_TAG         ?= $(shell echo '$(VERSION)' | sed -e 's/~/_/')
 MANIFEST_EXCLUDE_STANDARD ?= $(DEBPKGNAME)
 DEBIAN_BRANCH   ?= $(shell cat debian/gbp.conf | grep debian-branch | cut -d'=' -f2 | awk '{print $1}')
@@ -41,3 +41,8 @@ gen-orig-xz:
 	fi
 	[ ! -e ../build-area ] && mkdir ../build-area || true
 	[ ! -e ../build-area/$(DEBPKGNAME)_$(VERSION).orig.tar.xz ] && cp ../$(DEBPKGNAME)_$(VERSION).orig.tar.xz ../build-area
+
+fetch-upstream-remote:
+	git remote add upstream $(UPSTREAM_GIT) || true
+	git remote set-url upstream $(UPSTREAM_GIT)
+	git fetch upstream
