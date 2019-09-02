@@ -13,9 +13,9 @@ Dependencies
 
   You can install Snappy C library with following commands:
 
-  - APT: :code:`sudo apt-get install libsnappy-dev`
-  - RPM: :code:`sudo yum install libsnappy-devel`
-  - Brew:  :code:`brew install snappy`
+  - APT:  :code:`sudo apt-get install libsnappy-dev`
+  - RPM:  :code:`sudo yum install libsnappy-devel`
+  - Brew: :code:`brew install snappy`
 
 To use with pypy:
 
@@ -118,7 +118,7 @@ You can get help by running
 
 
 Snappy - compression library from Google (c)
- http://code.google.com/p/snappy
+ http://google.github.io/snappy
  
 Frequently Asked Questions
 ==========================
@@ -132,3 +132,9 @@ The procedure should be,
 
     $ brew install snappy # snappy library from Google 
     $ CPPFLAGS="-I/usr/local/include -L/usr/local/lib" pip install python-snappy
+
+Try this command if libstdc++ is deprecated
+
+::
+  
+    $ CPPFLAGS="-I/usr/local/include -L/usr/local/lib -stdlib=libc++ " pip install python-snappy

@@ -29,11 +29,11 @@ try:
 except ImportError:
     from distutils.core import setup, Extension
 
-version = '0.5.3'
+version = '0.5.4'
 long_description = """
 Python bindings for the snappy compression library from Google.
 
-More details about Snappy library: http://code.google.com/p/snappy
+More details about Snappy library: http://google.github.io/snappy
 """
 
 
@@ -79,6 +79,7 @@ setup(
                  'Programming Language :: Python :: 3',
                  'Programming Language :: Python :: 3.5',
                  'Programming Language :: Python :: 3.6',
+                 'Programming Language :: Python :: 3.7',
                  ],
     ext_modules=ext_modules,
     packages=packages,
